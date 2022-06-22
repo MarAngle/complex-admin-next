@@ -1,30 +1,47 @@
-<template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
-</template>
 
 <style lang="less">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  width: 100%;
+  height: 100%;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.local-color-primary {
+  color: @PrimaryColor !important;
 }
+.local-color-success {
+  color: @SuccessColor !important;
+}
+.local-color-warn {
+  color: @WarnColor !important;
+}
+.local-color-danger {
+  color: @DangerColor !important;
+}
+.local-color-disabled {
+  color: @DisabledColor !important;
+}
+
+.local-text-color {
+  color: @TextColor !important;
+}
+.local-text-color-head {
+  color: @TextHeadColor !important;
+}
+.local-text-color-secondary {
+  color: @TextSecondaryColor !important;
+}
+
+.local-border-color {
+  color: @BorderColor !important;
+}
+
+.local-disabled {
+  cursor: not-allowed;
+}
+
 </style>
+
+<template>
+  <router-view></router-view>
+</template>
+
