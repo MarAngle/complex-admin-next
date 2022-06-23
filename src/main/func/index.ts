@@ -1,19 +1,21 @@
 import _func from 'complex-func'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
-import style from '../style/index
-import { NotificationApi } from 'ant-design-vue/lib/notification'
-import { NotificationArgProps } from 'ant-design-vue/lib/vc-notification/Notification'
+import { NotificationApi, NotificationArgsProps } from 'ant-design-vue/lib/notification'
+import style from '../style/index'
+import { objectAny } from '@/modules/complex-func-next/src/ts'
 
 let loginAlert = false
 
 let currentUrl = ''
 
-export let init = function(app) {
+export const init = function(app: any) {
   _func.setLocalDataPre('complex-admin-')
-  return app.use(_func, {
-    root: {},
+  _func.installVue(app, {})
+  _func.init({
     data: {
-      color: style,
+      style: {
+        color: style
+      },
       regExp: {
         // 手机
         mobile: /^1(3|4|5|6|7|8|9)\d{9}$/,
@@ -30,18 +32,18 @@ export let init = function(app) {
     },
     methods: {
       getMockListByDictionary(dictionaryMap, page = 1, size = 10) {
-        let list: any[] = []
+        const list: objectAny[] = []
         for (let i = 0; i <size; i++) {
           list.push({})
         }
-        for (let ditem of dictionaryMap.values()) {
+        for (const ditem of dictionaryMap.values()) {
           for (let i = 0; i < size; i++) {
-            let targetItem = list[i]
-            let value:any = ditem.prop + '/' + page + '/' + i
+            const targetItem = list[i]
+            let value: string | objectAny = ditem.prop + '/' + page + '/' + i
             if (ditem.getInterface('showprop', 'list')) {
-              if (_func.getProp(ditem, 'mod.edit.option.list').length > 0) {
-                let size = ditem.mod.edit.option.list.length
-                let index = _func.getRandomNum(0, size)
+              if (_func.getProp(ditem, 'mod.edit.option.list')!.length > 0) {
+                const size = ditem.mod.edit.option.list.length
+                const index = _func.getRandomNum(0, size)
                 value = ditem.mod.edit.option.list[index].value
               } else {
                 value = {
@@ -54,72 +56,60 @@ export let init = function(app) {
           }
         }
         return list
-      },
-      buildLocalId(start = 0) {
-        let localId = {
-          data: start,
-          getData() {
-            this.data++
-            return this.data
-          }
-        }
-        return localId
       }
     },
     notice: {
-      methods: {
-        showMsg: function (content: string, type: keyof NotificationApi = 'open', title = '通知', duration = 3) {
-          this.setMsg({
-            message: title,
-            description: content,
-            duration: duration
-          }, type)
-        },
-        setMsg: function (option: NotificationArgProps, type: keyof NotificationApi = 'open') {
-          if (notification[type]) {
-            notification[type](option)
-          } else {
-            console.error('notification type is not defined, type reset open')
-            notification.open(option)
-          }
-        },
-        alert: function (content: string, title = '警告', next?: (act:string) => void, okText = '确认') {
-          this.setModal({
-            title: title,
-            content: content,
-            okText: okText,
-            onOk: function () {
-              if (next) {
-                next('ok')
-              }
+      showMsg: function (content: string, type: keyof NotificationApi = 'open', title = '通知', duration = 3) {
+        this.setMsg({
+          message: title,
+          description: content,
+          duration: duration
+        }, type)
+      },
+      setMsg: function (option: NotificationArgsProps, type: keyof NotificationApi = 'open') {
+        if (notification[type]) {
+          notification[type](option)
+        } else {
+          console.error('notification type is not defined, type reset open')
+          notification.open(option)
+        }
+      },
+      alert: function (content: string, title = '警告', next?: (act:string) => void, okText = '确认') {
+        this.setModal({
+          title: title,
+          content: content,
+          okText: okText,
+          onOk: function () {
+            if (next) {
+              next('ok')
             }
-          }, 'error')
-        },
-        confirm: function (content: string, title = '警告', next?: (act:string) => void, okText = '确认', cancelText = '取消') {
-          this.setModal({
-            title: title,
-            content: content,
-            okText: okText,
-            cancelText: cancelText,
-            onCancel: function () {
-              if (next) {
-                next('cancel')
-              }
-            },
-            onOk: function () {
-              if (next) {
-                next('ok')
-              }
-            }
-          }, 'confirm')
-        },
-        setModal: function (option: ModalProps, type = 'info') {
-          if (Modal[type]) {
-            Modal[type](option)
-          } else {
-            console.error('modal type is not defined, type reset info')
-            Modal.info(option)
           }
+        }, 'error')
+      },
+      confirm: function (content: string, title = '警告', next?: (act:string) => void, okText = '确认', cancelText = '取消') {
+        this.setModal({
+          title: title,
+          content: content,
+          okText: okText,
+          cancelText: cancelText,
+          onCancel: function () {
+            if (next) {
+              next('cancel')
+            }
+          },
+          onOk: function () {
+            if (next) {
+              next('ok')
+            }
+          }
+        }, 'confirm')
+      },
+      setModal: function (option: ModalProps, type = 'info') {
+        if (Modal[type]) {
+          Modal[type](option)
+        } else {
+          console.error('modal type is not defined, type reset info')
+          Modal.info(option)
         }
       }
     },
@@ -141,7 +131,7 @@ export let init = function(app) {
             fail: function (tokenname = 'TOKEN') {
               if (!loginAlert) {
                 loginAlert = true
-                let content = `${tokenname}错误，请重新登录！`
+                const content = `${tokenname}错误，请重新登录！`
                 _func.alert(content, 'TOKEN错误', () => {})
               }
             },
@@ -154,7 +144,7 @@ export let init = function(app) {
             }
           },
           methods: {
-            checkUrl(url) {
+            checkUrl(url: string) {
               if (url.indexOf(currentUrl) > -1) {
                 return true
               } else {
@@ -194,3 +184,5 @@ export let init = function(app) {
     }
   })
 }
+
+export default _func
