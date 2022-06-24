@@ -1,6 +1,6 @@
-import _func from 'complex-func'
+import _func, { noticeDataMsgType } from 'complex-func'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
-import { NotificationApi, NotificationArgsProps } from 'ant-design-vue/lib/notification'
+import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
 import style from '../style/index'
 import { objectAny } from '@/modules/complex-func-next/src/ts'
 
@@ -59,14 +59,14 @@ export const init = function(app: any) {
       }
     },
     notice: {
-      showMsg: function (content: string, type: keyof NotificationApi = 'open', title = '通知', duration = 3) {
+      showMsg: function (content: string, type: noticeDataMsgType = 'info', title = '通知', duration = 3) {
         this.setMsg({
           message: title,
           description: content,
           duration: duration
         }, type)
       },
-      setMsg: function (option: NotificationArgsProps, type: keyof NotificationApi = 'open') {
+      setMsg: function (option: NotificationArgsProps, type: noticeDataMsgType = 'info') {
         if (notification[type]) {
           notification[type](option)
         } else {
@@ -132,7 +132,7 @@ export const init = function(app: any) {
               if (!loginAlert) {
                 loginAlert = true
                 const content = `${tokenname}错误，请重新登录！`
-                _func.alert(content, 'TOKEN错误', () => {})
+                _func.alert(content, 'TOKEN错误')
               }
             },
             data: {
@@ -151,8 +151,8 @@ export const init = function(app: any) {
                 return false
               }
             },
-            check (response) {
-              let res = {
+            check (response: any) {
+              let res: any = {
                 status: 'fail'
               }
               if (response.data) {
