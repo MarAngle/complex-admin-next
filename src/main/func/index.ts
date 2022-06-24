@@ -6,7 +6,7 @@ import { objectAny } from '@/modules/complex-func-next/src/ts'
 
 let loginAlert = false
 
-let currentUrl = ''
+const currentUrl = ''
 
 export const init = function(app: any) {
   _func.setLocalDataPre('complex-admin-')
@@ -31,7 +31,7 @@ export const init = function(app: any) {
       }
     },
     methods: {
-      getMockListByDictionary(dictionaryMap, page = 1, size = 10) {
+      getMockListByDictionary(dictionaryMap: Map<string, objectAny>, page = 1, size = 10) {
         const list: objectAny[] = []
         for (let i = 0; i <size; i++) {
           list.push({})
@@ -152,7 +152,7 @@ export const init = function(app: any) {
               }
             },
             check (response: any) {
-              let res: any = {
+              const res: any = {
                 status: 'fail'
               }
               if (response.data) {

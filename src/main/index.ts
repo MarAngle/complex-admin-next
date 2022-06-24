@@ -3,6 +3,6 @@ import { init as initFunc } from './func/index'
 
 import { init as initAntd} from './antd/index'
 
-export const init = function(app) {
+export const init = function(app: any): any {
   return initFunc(initAntd(app))
 }
