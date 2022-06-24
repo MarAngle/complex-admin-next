@@ -183,6 +183,7 @@ export const init = function(app: any) {
       ]
     }
   })
+  return app
 }
 
 export default _func
