@@ -1,12 +1,18 @@
 import _func, { noticeDataMsgType } from 'complex-func'
+import { objectAny } from '@/modules/complex-func-next/src/ts'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
 import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
 import style from '../style/index'
-import { objectAny } from '@/modules/complex-func-next/src/ts'
 
 let loginAlert = false
 
 const currentUrl = ''
+
+declare global {
+  interface _func {
+    formatLocal: (item: any) => any
+  }
+}
 
 export const init = function(app: any) {
   _func.setLocalDataPre('complex-admin-')
@@ -31,6 +37,10 @@ export const init = function(app: any) {
       }
     },
     methods: {
+      formatLocal(item: objectAny) {
+        item.id = 1
+        return item
+      },
       getMockListByDictionary(dictionaryMap: Map<string, objectAny>, page = 1, size = 10) {
         const list: objectAny[] = []
         for (let i = 0; i <size; i++) {
