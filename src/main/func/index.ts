@@ -1,5 +1,6 @@
 import _func, { noticeDataMsgType } from 'complex-func'
-import { objectAny } from '@/modules/complex-func-next/src/ts'
+import _require from 'complex-require'
+import { objectAny } from 'complex-func/src/ts'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
 import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
 import style from '../style/index'
@@ -122,76 +123,76 @@ export const init = function(app: any) {
           Modal.info(option)
         }
       }
+    }
+  })
+  _require.$init({
+    api: {
+      baseURL: currentUrl
     },
-    require: {
-      api: {
-        baseURL: currentUrl
-      },
-      option: {
-        headers: {
-          'Content-Type': 'application/json;charset=UTF-8'
-        }
-      },
-      rule: [
-        {
-          name: '基本',
-          prop: 'default',
-          token: {
-            check: true,
-            fail: function (tokenname = 'TOKEN') {
-              if (!loginAlert) {
-                loginAlert = true
-                const content = `${tokenname}错误，请重新登录！`
-                _func.alert(content, 'TOKEN错误')
-              }
-            },
-            data: {
-              // sign: {
-              //   require: true,
-              //   data: 'sign',
-              //   location: 'params'
-              // }
+    option: {
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8'
+      }
+    },
+    rule: [
+      {
+        name: '基本',
+        prop: 'default',
+        token: {
+          check: true,
+          fail: function (tokenname = 'TOKEN') {
+            if (!loginAlert) {
+              loginAlert = true
+              const content = `${tokenname}错误，请重新登录！`
+              _func.alert(content, 'TOKEN错误')
             }
           },
-          methods: {
-            checkUrl(url: string) {
-              if (url.indexOf(currentUrl) > -1) {
-                return true
+          data: {
+            // sign: {
+            //   require: true,
+            //   data: 'sign',
+            //   location: 'params'
+            // }
+          }
+        },
+        methods: {
+          checkUrl(url: string) {
+            if (url.indexOf(currentUrl) > -1) {
+              return true
+            } else {
+              return false
+            }
+          },
+          check (response: any) {
+            const res: any = {
+              status: 'fail'
+            }
+            if (response.data) {
+              res.data = response.data
+              if (response.data.result == 'SUCCEED') {
+                res.status = 'success'
+                res.msg = response.data.errorMessage
+              } else if (response.data.result == 'LOGIN') {
+                res.status = 'login'
+                res.code = response.data.errorCode
+                res.msg = response.data.errorMessage
               } else {
-                return false
+                res.code = response.data.errorCode
+                res.msg = response.data.errorMessage || '接口请求返回失败且无错误信息！'
               }
-            },
-            check (response: any) {
-              const res: any = {
-                status: 'fail'
-              }
-              if (response.data) {
-                res.data = response.data
-                if (response.data.result == 'SUCCEED') {
-                  res.status = 'success'
-                  res.msg = response.data.errorMessage
-                } else if (response.data.result == 'LOGIN') {
-                  res.status = 'login'
-                  res.code = response.data.errorCode
-                  res.msg = response.data.errorMessage
-                } else {
-                  res.code = response.data.errorCode
-                  res.msg = response.data.errorMessage || '接口请求返回失败且无错误信息！'
-                }
-              }
-              return res
-            },
-            failMsg (errRes) {
-              if (errRes.error.response) {
-                if (errRes.error.response.data && errRes.error.response.data.message) {
-                  // return errRes.error.response.data.message
-                }
+            }
+            return res
+          },
+          failMsg (errRes) {
+            if (errRes.error.response) {
+              if (errRes.error.response.data && errRes.error.response.data.message) {
+                // return errRes.error.response.data.message
               }
             }
           }
         }
-      ]
-    }
+      }
+    ]
   })
   return app
 }
