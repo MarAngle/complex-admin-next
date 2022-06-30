@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import _func from "@/main/func"
+import $func from "@/main/func"
 import { defineComponent } from "vue"
 
 
@@ -31,7 +31,7 @@ export default defineComponent({
   },
   methods: {
     pushData(item: any) {
-      this.list.push(_func.formatTree(item))
+      this.list.push($func.formatTree(item))
     }
   }
 })

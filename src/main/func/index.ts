@@ -1,18 +1,19 @@
-import _func, { noticeDataMsgType } from 'complex-func'
+import $func, { noticeDataMsgType } from 'complex-func'
 import _require from 'complex-require'
-import { objectAny } from 'complex-func/ts'
+import { objectAny } from 'complex-func/ts/index'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
 import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
 import style from '../style/index'
+import { App } from 'vue'
 
 let loginAlert = false
 
 const currentUrl = ''
 
-export const init = function(app: any) {
-  _func.setLocalDataPre('complex-admin-')
-  _func.installVue(app, {})
-  _func.init({
+export const init = function(app: App) {
+  $func.setLocalDataPre('complex-admin-')
+  $func.installVue(app, {})
+  $func.init({
     data: {
       style: {
         color: style
@@ -46,9 +47,9 @@ export const init = function(app: any) {
             const targetItem = list[i]
             let value: string | objectAny = ditem.prop + '/' + page + '/' + i
             if (ditem.getInterface('showprop', 'list')) {
-              if (_func.getProp(ditem, 'mod.edit.option.list')!.length > 0) {
+              if ($func.getProp(ditem, 'mod.edit.option.list')!.length > 0) {
                 const size = ditem.mod.edit.option.list.length
-                const index = _func.getRandomNum(0, size)
+                const index = $func.getRandomNum(0, size)
                 value = ditem.mod.edit.option.list[index].value
               } else {
                 value = {
@@ -138,7 +139,7 @@ export const init = function(app: any) {
             if (!loginAlert) {
               loginAlert = true
               const content = `${tokenname}错误，请重新登录！`
-              _func.alert(content, 'TOKEN错误')
+              $func.alert(content, 'TOKEN错误')
             }
           },
           data: {
@@ -192,9 +193,9 @@ export const init = function(app: any) {
 }
 
 declare global {
-  interface Vue {
-    _func: _func
+  interface App {
+    $func: $func
   }
 }
 
-export default _func
+export default $func
