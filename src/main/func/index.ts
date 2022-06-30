@@ -1,5 +1,5 @@
 import $func, { noticeDataMsgType } from 'complex-func'
-import _require from 'complex-require'
+import $require from 'complex-require'
 import { objectAny } from 'complex-func/ts/index'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
 import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
@@ -10,9 +10,15 @@ let loginAlert = false
 
 const currentUrl = ''
 
+// declare global {
+//   interface App {
+//     $complex: $func
+//   }
+// }
+
 export const init = function(app: App) {
   $func.setLocalDataPre('complex-admin-')
-  $func.installVue(app, {})
+  // $func.installVue(app, {})
   $func.init({
     data: {
       style: {
@@ -120,7 +126,7 @@ export const init = function(app: App) {
       }
     }
   })
-  _require.$init({
+  $require.$init({
     api: {
       baseURL: currentUrl
     },
@@ -189,13 +195,14 @@ export const init = function(app: App) {
       }
     ]
   })
+
+  app.config.globalProperties.$complex = {
+    $func: $func,
+    $require: $require
+  }
+
   return app
 }
 
-declare global {
-  interface App {
-    $func: $func
-  }
-}
 
 export default $func
