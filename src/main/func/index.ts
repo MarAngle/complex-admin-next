@@ -1,6 +1,6 @@
 import _func, { noticeDataMsgType } from 'complex-func'
 import _require from 'complex-require'
-import { objectAny } from 'complex-func/src/ts'
+import { objectAny } from 'complex-func/ts'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
 import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
 import style from '../style/index'
@@ -8,12 +8,6 @@ import style from '../style/index'
 let loginAlert = false
 
 const currentUrl = ''
-
-declare global {
-  interface _func {
-    formatLocal: (item: any) => any
-  }
-}
 
 export const init = function(app: any) {
   _func.setLocalDataPre('complex-admin-')
@@ -195,6 +189,12 @@ export const init = function(app: any) {
     ]
   })
   return app
+}
+
+declare global {
+  interface Vue {
+    _func: _func
+  }
 }
 
 export default _func
