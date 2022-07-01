@@ -7,32 +7,23 @@
 
 <template>
   <div class="home-index">
-    {{ list }}
+    {{ mainData }}
   </div>
 </template>
 
 <script lang="ts">
-import $func from "@/main/func"
 import { defineComponent } from "vue"
+import mainData from "./mainData"
 
 
 export default defineComponent({
   name: 'HomeIndex',
   data() {
-    const list: any[] = []
     return {
-      list: list
+      mainData: mainData
     }
-  },
-  mounted() {
-    this.pushData({
-      name: 1
-    })
   },
   methods: {
-    pushData(item: any) {
-      this.list.push($func.formatTree(item))
-    }
   }
 })
 </script>
