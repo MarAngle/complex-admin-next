@@ -1,21 +1,28 @@
 import $func from "@/main/func"
 import { SimpleData } from "complex-data";
 
+
+interface mainDataType extends SimpleData{
+  $getData: (this: SimpleData) => void
+}
+
 const mainData = new SimpleData({
   name: '测试',
   prop: 'test',
-  extra: {},
+  extra: {
+    a: 1
+  },
   func: {},
   methods: {
-    $getData() {
-      console.log($func)
+    $getData(this: mainDataType) {
+      console.log($func, this)
+      console.log(this.getParent())
     }
   }
-})
+}) as mainDataType
 
-const a = $func.deepClone(mainData, true)
+mainData.$getData()
 
-console.log(a)
 
 export default mainData
 
