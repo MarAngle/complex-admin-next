@@ -2539,25 +2539,25 @@ commondir@^1.0.1:
   resolved "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
   integrity sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==
 
-complex-data@^3.0.0-beta.4:
-  version "3.0.0-beta.4"
-  resolved "https://registry.npmjs.org/complex-data/-/complex-data-3.0.0-beta.4.tgz#1358d999676c37c7e4e8ef172075bf27ea97f5b9"
-  integrity sha512-5Kzb6uo+dsoPMVUuMXQNEI0IT/47pAO1dVZM6vmIM3/PASmwT+xMTeSRO3fybat46SSInZB7UA6r9d4wFP+iJw==
-  dependencies:
-    complex-func "3.0.0-beta.5"
-
-complex-func@3.0.0-beta.5, complex-func@^3.0.0-beta.5:
+complex-data@^3.0.0-beta.5:
   version "3.0.0-beta.5"
-  resolved "https://registry.npmjs.org/complex-func/-/complex-func-3.0.0-beta.5.tgz#bb6a55db965554a69f13c89baa94cd6a114ad8a8"
-  integrity sha512-zrEwCPW/LeYDseE49hCrai9sedyMXJ6g/uwFZ98yN3KMouoSXD7ulRUn+Zi6XkoExcJoAnEfuUeCB1jvsW7ZJQ==
+  resolved "https://registry.npmjs.org/complex-data/-/complex-data-3.0.0-beta.5.tgz#601fe595912a08e43c4490c3dbb91456ce6aaa14"
+  integrity sha512-qP2RyYFytJNifQeDm5x34wGy9YTRahtlwQ+3BDdyR7gezdWCQB4kTNAyJ0MJKBL6kAg1aXE5uv5EKmD5AoGLWg==
+  dependencies:
+    complex-func "3.0.0-beta.6"
 
-complex-require@^3.0.0-beta.4:
-  version "3.0.0-beta.4"
-  resolved "https://registry.npmjs.org/complex-require/-/complex-require-3.0.0-beta.4.tgz#45f400bb4ed768ed2608cfdbbd6a66d0e278b276"
-  integrity sha512-AmYeYfUfiXWvV9V5GUXaMddnSVBWE9eNjARK2nAsIpg8EMShADfw+IxGVWwDuj0zdn5cFR+PwFY0Rq8EBuK9UQ==
+complex-func@3.0.0-beta.6, complex-func@^3.0.0-beta.6:
+  version "3.0.0-beta.6"
+  resolved "https://registry.npmjs.org/complex-func/-/complex-func-3.0.0-beta.6.tgz#f7709059c70c51a97de156fae14e3a30b3ae03a9"
+  integrity sha512-Ai6t+AVlUczwDlWSi5DvFnMGk6M1KWVBh0IKFoLNJ22Q3cxLQue0rODXvFGVGyygwFiN3++QwoJKPGs8has4XA==
+
+complex-require@^3.0.0-beta.5:
+  version "3.0.0-beta.5"
+  resolved "https://registry.npmjs.org/complex-require/-/complex-require-3.0.0-beta.5.tgz#d5043d5e1926bbb11daf3b771c6f44a41e3ddd4d"
+  integrity sha512-/L3PBWpEhxqWC2ILPqm8OYz73ZSB52zXslRbNM2YBzDxFR6KjmXtii4UyjTljvBdGqXamxeO/TlAl9FcAymQfA==
   dependencies:
     axios "^0.27.2"
-    complex-func "3.0.0-beta.5"
+    complex-func "3.0.0-beta.6"
 
 compressible@~2.0.16:
   version "2.0.18"

@@ -1,7 +1,8 @@
 import { App } from 'vue'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
 import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
-import $func, { noticeDataMsgType } from 'complex-func'
+import $func from 'complex-func'
+import { noticeDataMsgType } from 'complex-func/src/option/noticeData'
 
 export const funcInit = function(app: App) {
   $func.setLocalDataPre('complex-admin-')

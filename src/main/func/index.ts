@@ -1,10 +1,11 @@
-import $func, { noticeDataMsgType } from 'complex-func'
+import $func from 'complex-func'
 import $require from 'complex-require'
 import { objectAny } from 'complex-func/ts/index'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
 import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
 import style from '../style/index'
 import { App } from 'vue'
+import { noticeDataMsgType } from 'complex-func/src/option/noticeData'
 
 let loginAlert = false
 
