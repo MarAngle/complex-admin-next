@@ -1,5 +1,5 @@
 {
-  "func": "./../../src/modules/complex-func/index.js",
-  "require": "./../../src/modules/complex-require/index.js",
-  "data": "./../../src/modules/complex-data/index.js"
+  "func": "./../../src/modules/complex-func/index.ts",
+  "require": "./../../src/modules/complex-require/index.ts",
+  "data": "./../../src/modules/complex-data/index.ts"
 }

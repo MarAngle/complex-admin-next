@@ -16,7 +16,7 @@ const mainData = new SimpleData({
   methods: {
     $getData(this: mainDataType) {
       console.log($func, this)
-      console.log(this.getParent())
+      console.log(this.$getParent())
     }
   }
 }) as mainDataType
