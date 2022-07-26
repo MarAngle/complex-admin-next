@@ -1,12 +1,17 @@
 import $func from "@/main/func"
-import { SimpleData } from "complex-data";
+import { ListData } from "complex-data";
 
-
-interface mainDataType extends SimpleData{
-  $getData: (this: SimpleData) => void
+//* 考虑通过多接口实现统一管理 */
+interface mainDataType<DATA extends object> extends ListData<DATA>{
+  $getData: (this: ListData<DATA>) => Promise<any>
 }
 
-const mainData = new SimpleData({
+interface dataType {
+  id: number,
+  name: string
+}
+
+const mainData = new ListData({
   name: '测试',
   prop: 'test',
   extra: {
@@ -14,12 +19,12 @@ const mainData = new SimpleData({
   },
   func: {},
   methods: {
-    $getData(this: mainDataType) {
+    $getData(this: mainDataType<dataType>) {
       console.log($func, this)
       console.log(this.$getParent())
     }
   }
-}) as mainDataType
+}) as mainDataType<dataType>
 
 mainData.$getData()
 

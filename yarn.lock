@@ -2539,10 +2539,10 @@ commondir@^1.0.1:
   resolved "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
   integrity sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==
 
-complex-data@^3.0.0-beta.5:
-  version "3.0.0-beta.5"
-  resolved "https://registry.npmjs.org/complex-data/-/complex-data-3.0.0-beta.5.tgz#601fe595912a08e43c4490c3dbb91456ce6aaa14"
-  integrity sha512-qP2RyYFytJNifQeDm5x34wGy9YTRahtlwQ+3BDdyR7gezdWCQB4kTNAyJ0MJKBL6kAg1aXE5uv5EKmD5AoGLWg==
+complex-data@^3.0.0-beta.6:
+  version "3.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/complex-data/-/complex-data-3.0.0-beta.6.tgz#8a4c062958cab97c3e9044ad01519265ffb39e4c"
+  integrity sha512-JvkQ6bl2Cxlx9F+GrUthhs3Bv/XXQ4aRLRUa/8TtVPQf2WmP7caubvqnL9SJ5mhkOGgIL0cIQXg34VzrBVEmpg==
   dependencies:
     complex-func "3.0.0-beta.6"
 
