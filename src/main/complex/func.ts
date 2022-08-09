@@ -6,7 +6,6 @@ import { noticeDataMsgType } from 'complex-func/src/option/noticeData'
 
 export const funcInit = function(app: App) {
   $func.setLocalDataPre('complex-admin-')
-  // $func.installVue(app, {})
   $func.init({
     notice: {
       showMsg: function (content: string, type: noticeDataMsgType = 'info', title = '通知', duration = 3) {

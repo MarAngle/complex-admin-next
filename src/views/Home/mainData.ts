@@ -1,4 +1,4 @@
-import $func from "@/main/func"
+import $func from "complex-func"
 import { ListData } from "complex-data";
 
 //* 考虑通过多接口实现统一管理 */

@@ -1,3 +1,6 @@
-import { init } from 'complex-component-next/antd'
+import { init } from 'complex-component-next'
+import { App } from 'vue'
 
-export const componentInit = init
+export const componentInit = function(app: App) {
+  init(app)
+}
