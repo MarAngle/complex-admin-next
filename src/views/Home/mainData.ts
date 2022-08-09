@@ -17,6 +17,12 @@ const mainData = new ListData({
   extra: {
     a: 1
   },
+  module: {
+    dictionary: {
+      option: {},
+      list: []
+    }
+  },
   func: {},
   methods: {
     $getData(this: mainDataType<dataType>) {
@@ -26,7 +32,7 @@ const mainData = new ListData({
   }
 }) as mainDataType<dataType>
 
-mainData.$getData()
+// mainData.$getData()
 
 
 export default mainData

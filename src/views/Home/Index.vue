@@ -8,6 +8,7 @@
 <template>
   <div class="home-index">
     {{ mainData }}
+    <ComplexAutoIndex :index="10" />
   </div>
 </template>
 
