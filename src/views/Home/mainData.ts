@@ -1,5 +1,5 @@
 import $func from "complex-func"
-import { ListData } from "complex-data";
+import { ListData } from "@/modules/complex-data";
 
 //* 考虑通过多接口实现统一管理 */
 interface mainDataType<DATA extends object> extends ListData<DATA>{
@@ -20,7 +20,16 @@ const mainData = new ListData({
   module: {
     dictionary: {
       option: {},
-      list: []
+      list: [
+        {
+          prop: 'name',
+          mod: {
+            edit: {
+              type: 'input'
+            }
+          }
+        }
+      ]
     }
   },
   func: {},
@@ -34,6 +43,8 @@ const mainData = new ListData({
 
 // mainData.$getData()
 
+
+console.log(mainData)
 
 export default mainData
 

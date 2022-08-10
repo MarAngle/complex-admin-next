@@ -1,4 +1,4 @@
-import antdImplement from 'complex-data/implement/antd'
+import antdImplement from "@/modules/complex-data/implement/antd"
 
 export const dataInit = function() {
   antdImplement.init()
