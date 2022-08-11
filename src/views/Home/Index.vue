@@ -1,5 +1,5 @@
 <style lang="less" scoped>
-.home-index{
+.home-index {
   width: 100%;
   height: 100%;
 }
@@ -7,24 +7,22 @@
 
 <template>
   <div class="home-index">
-    {{ mainData }}
-    <ComplexAutoIndex :index="10" />
+    <ComplexTableView :listData="mainData" :columnList="pageList" />
   </div>
 </template>
 
 <script lang="ts" >
-import { defineComponent } from "vue"
-import mainData from "./mainData"
-
+import { defineComponent } from "vue";
+import mainData from "./mainData";
 
 export default defineComponent({
-  name: 'HomeIndex',
+  name: "HomeIndex",
   data() {
     return {
-      mainData: mainData
-    }
+      mainData: mainData,
+      pageList: mainData.$getDictionaryPageList('list').data
+    };
   },
-  methods: {
-  }
-})
+  methods: {}
+});
 </script>
