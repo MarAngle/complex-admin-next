@@ -1,5 +1,5 @@
 import $func from "complex-func"
-import { ListData } from "@/modules/complex-data";
+import { ListData } from "complex-data";
 import { objectAny } from "complex-data/ts";
 
 //* 考虑通过多接口实现统一管理 */
