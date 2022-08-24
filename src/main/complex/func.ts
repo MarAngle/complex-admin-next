@@ -4,6 +4,8 @@ import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
 import $func from 'complex-func'
 import { noticeDataMsgType } from 'complex-func/src/option/noticeData'
 
+$func.page.init()
+
 export const funcInit = function(app: App) {
   $func.setLocalDataPre('complex-admin-')
   $func.init({
