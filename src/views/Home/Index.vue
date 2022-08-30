@@ -2,12 +2,21 @@
 .home-index {
   width: 100%;
   height: 100%;
+  padding: 20px;
 }
 </style>
 
 <template>
   <div class="home-index">
+    <a-button @click="onBuild()">新建</a-button>
     <ComplexTableView :listData="mainData" :columnList="pageList" />
+    <ComplexAutoModal
+      :optionProps="{
+        width: 620,
+        okText: '确认',
+        destroyOnClose: true
+      }"
+      ref="edit"></ComplexAutoModal>
   </div>
 </template>
 
@@ -20,9 +29,13 @@ export default defineComponent({
   data() {
     return {
       mainData: mainData,
-      pageList: mainData.$getDictionaryPageList('list').data
+      pageList: mainData.$getDictionaryPageList("list").data
     };
   },
-  methods: {}
+  methods: {
+    onBuild() {
+      (this.$refs.edit as any).show('新增')
+    }
+  }
 });
 </script>
