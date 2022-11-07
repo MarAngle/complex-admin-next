@@ -16,7 +16,9 @@
         okText: '确认',
         destroyOnClose: true
       }"
-      ref="edit"></ComplexAutoModal>
+      ref="edit-modal">
+      <ComplexEditForm ref="edit-view" :dictionary="mainData.$module.dictionary"></ComplexEditForm>
+    </ComplexAutoModal>
   </div>
 </template>
 
@@ -34,7 +36,10 @@ export default defineComponent({
   },
   methods: {
     onBuild() {
-      (this.$refs.edit as any).show('新增')
+      (this.$refs['edit-modal'] as any).show('新增')
+      this.$nextTick(() => {
+        (this.$refs['edit-view'] as any).show('build', 'build')
+      })
     }
   }
 });

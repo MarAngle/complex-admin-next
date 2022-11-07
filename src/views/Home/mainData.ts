@@ -1,6 +1,6 @@
 import $func from "complex-func"
-import { ListData } from "@/modules/complex-data";
-import { objectAny } from "@/modules/complex-data/ts";
+import { ListData } from "complex-data";
+import { objectAny } from "complex-data/ts";
 
 //* 考虑通过多接口实现统一管理 */
 export interface mainDataType<DATA extends object> extends ListData<DATA>{
@@ -34,7 +34,7 @@ const mainData = new ListData({
           name: 'ID',
           mod: {
             list: {},
-            edit: {
+            build: {
               type: 'input'
             }
           }
@@ -44,7 +44,7 @@ const mainData = new ListData({
           name: '名称',
           mod: {
             list: {},
-            edit: {
+            build: {
               type: 'input'
             }
           }
