@@ -9,7 +9,7 @@
 <template>
   <div class="home-index">
     <a-button @click="onBuild()">新建</a-button>
-    <ComplexTableView :listData="mainData" :columnList="pageList" />
+    <!-- <ComplexTableView :listData="mainData" :columnList="pageList" />
     <ComplexAutoModal
       :optionProps="{
         width: 620,
@@ -18,7 +18,7 @@
       }"
       ref="edit-modal">
       <ComplexEditForm ref="edit-view" :dictionary="mainData.$module.dictionary"></ComplexEditForm>
-    </ComplexAutoModal>
+    </ComplexAutoModal> -->
   </div>
 </template>
 
@@ -31,7 +31,7 @@ export default defineComponent({
   data() {
     return {
       mainData: mainData,
-      pageList: mainData.$getDictionaryPageList("list").data
+      // pageList: mainData.$getDictionaryPageList("list").data
     };
   },
   methods: {

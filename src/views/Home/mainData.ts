@@ -1,18 +1,13 @@
-import $func from "complex-func"
-import { ListData } from "complex-data";
-import { objectAny } from "complex-data/ts";
+import BaseData from "@/modules/complex-data/src/data/BaseData"
 
-//* 考虑通过多接口实现统一管理 */
-export interface mainDataType<DATA extends object> extends ListData<DATA>{
-  $getData: (this: ListData<DATA>) => Promise<any>
-}
+
 
 interface dataType {
   id: number,
   name: string
 }
 
-const mainData = new ListData({
+const mainData = new BaseData({
   name: '测试',
   prop: 'test',
   extra: {
@@ -25,51 +20,33 @@ const mainData = new ListData({
         {
           prop: '$index',
           name: 'No',
-          mod: {
-            list: {}
-          }
         },
         {
           prop: 'id',
           name: 'ID',
-          mod: {
-            list: {},
-            build: {
-              type: 'input'
-            }
-          }
         },
         {
           prop: 'name',
           name: '名称',
-          mod: {
-            list: {},
-            build: {
-              type: 'input'
-            }
-          }
         }
       ]
     }
   },
-  func: {},
-  methods: {
-    $getData(this: mainDataType<dataType>) {
-      return new Promise((resolve) => {
-        const list: dataType[] = []
-        for (let i = 0; i < 10; i++) {
-          const item = {
-            id: i,
-            name: 'name' + 'name' + 'name' + 'name' + i
-          }
-          list.push(item)
+  $getData(this: BaseData) {
+    return new Promise((resolve) => {
+      const list: dataType[] = []
+      for (let i = 0; i < 10; i++) {
+        const item = {
+          id: i,
+          name: 'name' + 'name' + 'name' + 'name' + i
         }
-        this.$formatData(list)
-        resolve({ status: 'success' })
-      })
-    }
-  }
-}) as mainDataType<dataType>
+        list.push(item)
+      }
+      this.$module.dictionary!.formatListData(list)
+      resolve({ status: 'success' })
+    })
+  },
+})
 
 mainData.$loadData()
 

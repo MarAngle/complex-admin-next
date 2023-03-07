@@ -1,23 +1,21 @@
 import { App } from 'vue'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
 import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
-import $func from 'complex-func'
-import { noticeDataMsgType } from 'complex-func/src/option/noticeData'
-
-$func.page.init()
+import { install } from 'complex-func'
+import { setLocalProp } from 'complex-utils'
+import { noticeMsgType } from 'complex-func/src/notice'
 
 export const funcInit = function(app: App) {
-  $func.setLocalDataPre('complex-admin-')
-  $func.init({
+  install({
     notice: {
-      showMsg: function (content: string, type: noticeDataMsgType = 'info', title = '通知', duration = 3) {
+      showMsg: function (content: string, type: noticeMsgType = 'info', title = '通知', duration = 3) {
         this.setMsg({
           message: title,
           description: content,
           duration: duration
         }, type)
       },
-      setMsg: function (option: NotificationArgsProps, type: noticeDataMsgType = 'info') {
+      setMsg: function (option: NotificationArgsProps, type: noticeMsgType = 'info') {
         if (notification[type]) {
           notification[type](option)
         } else {
@@ -64,10 +62,8 @@ export const funcInit = function(app: App) {
         }
       }
     }
-  })
 
+  })
+  setLocalProp('complex-admin-')
   return app
 }
-
-
-export default $func

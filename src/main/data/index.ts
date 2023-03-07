@@ -1,7 +1,6 @@
 
-import $func from 'complex-func'
-import { objectAny } from 'complex-func/ts/index'
 import style from '../style/index'
+import { getProp, getRandomNum } from 'complex-utils'
 
 const $data = {
   data: {
@@ -22,23 +21,23 @@ const $data = {
       port: /^((6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])|[0-5]?\d{0,4})$/
     }
   },
-  formatLocal(item: objectAny) {
+  formatLocal(item: Record<PropertyKey, any>) {
     item.id = 1
     return item
   },
-  getMockListByDictionary(dictionaryMap: Map<string, objectAny>, page = 1, size = 10) {
-    const list: objectAny[] = []
+  getMockListByDictionary(dictionaryMap: Map<string, Record<PropertyKey, any>>, page = 1, size = 10) {
+    const list: Record<PropertyKey, any>[] = []
     for (let i = 0; i <size; i++) {
       list.push({})
     }
     for (const ditem of dictionaryMap.values()) {
       for (let i = 0; i < size; i++) {
         const targetItem = list[i]
-        let value: string | objectAny = ditem.prop + '/' + page + '/' + i
+        let value: string | Record<PropertyKey, any> = ditem.prop + '/' + page + '/' + i
         if (ditem.getInterface('showprop', 'list')) {
-          if ($func.getProp(ditem, 'mod.edit.option.list')!.length > 0) {
+          if (getProp(ditem, 'mod.edit.option.list')!.length > 0) {
             const size = ditem.mod.edit.option.list.length
-            const index = $func.getRandomNum(0, size)
+            const index = getRandomNum(0, size)
             value = ditem.mod.edit.option.list[index].value
           } else {
             value = {

@@ -2561,37 +2561,39 @@ complex-component-next@^3.0.0-beta.6:
     ant-design-vue "^3.2.11"
     complex-data "3.0.0-beta.15"
 
-complex-data@3.0.0-beta.15, complex-data@^3.0.0-beta.15:
+complex-data@3.0.0-beta.15:
   version "3.0.0-beta.15"
   resolved "https://registry.npmjs.org/complex-data/-/complex-data-3.0.0-beta.15.tgz#1bfa05892b5a8de77a29578eadbe2670ff4e0939"
   integrity sha512-Mig9mmVeQLogCRaUt/waIiMe49IjhNwzyPN8lX9B6ZaPJkJqUgIZU6cSK0KEMOD4/Yau//v48Cqi4pJgZhupvg==
   dependencies:
     complex-func "3.0.0-beta.8"
 
+complex-data@^3.1.0-beta.3:
+  version "3.1.0-beta.3"
+  resolved "https://registry.npmjs.org/complex-data/-/complex-data-3.1.0-beta.3.tgz#bbf662a1d69a3f6a6f09ead852d9f56b999a0f27"
+  integrity sha512-v7Um8nozvWTSuCNhhoDBGbBmbXtyia2nzhA27DEz7OI8Zy9MHZMJm08ZPZzkapj0ZrLKUPSlOvM5RNqbFhfF8w==
+  dependencies:
+    complex-utils "^1.0.5"
+
 complex-func@3.0.0-beta.8:
   version "3.0.0-beta.8"
   resolved "https://registry.npmjs.org/complex-func/-/complex-func-3.0.0-beta.8.tgz#ae8f7da2f7a83a1876636b1e191dbc6a319fa7b8"
   integrity sha512-NJRFIHY2J6HSJNsiNNvioOQE/LKx3WEfNCTu4ZSJFu8zd6p5LtXcGgftToYMbtwtNqaXSI3EvjxftSADD05ezw==
 
-complex-func@^3.0.1-beta.1:
-  version "3.0.1-beta.1"
-  resolved "https://registry.npmjs.org/complex-func/-/complex-func-3.0.1-beta.1.tgz#f5c7690762f57635dd7567dfedf2b96f0f72cf54"
-  integrity sha512-tA9nTwaDpaCrqxgBZZ+l0aTIvTtWLrPx0uJHAQYPUbtNR9kt+NoRazEuNKBckimCcGPDDJr1JDrSTn1BntPKVg==
-  dependencies:
-    complex-utils "^1.0.4"
-
-complex-require@^3.0.1-beta.2:
+complex-func@^3.0.1-beta.2:
   version "3.0.1-beta.2"
-  resolved "https://registry.npmjs.org/complex-require/-/complex-require-3.0.1-beta.2.tgz#e6a4d8456387975b4008232b5bf5afe55b0805ea"
-  integrity sha512-y7p22+rRUg5opf4fYwuhkgHp+cl1WbUf3FczhSuSvcDyGZTauwduh61l+OkQdj9dH+C+QnM69DyXf0AyG0NdAA==
+  resolved "https://registry.npmjs.org/complex-func/-/complex-func-3.0.1-beta.2.tgz#0d49288afa277b42006544d7a285788deb44de7a"
+  integrity sha512-0yB2mtSB5wuKMWDPocanykSqHOIZbhrBerZcob6aFNrAywq6Dss1j5vCKerh7UOwwTVGdWZFh8gnmoV74vr4MA==
+  dependencies:
+    complex-utils "^1.0.5"
+
+complex-require@^3.0.1-beta.4:
+  version "3.0.1-beta.4"
+  resolved "https://registry.npmjs.org/complex-require/-/complex-require-3.0.1-beta.4.tgz#5d43788358cacdb2eaeb32cdb115aa8b3bc23c69"
+  integrity sha512-YG3fsVPU7IufMLsRPN0u4u9zVCZC2YgXUZBm1NjU8s5cegFNHLc1DeMJr+t990JeCjwSevG8fzfzjFMN1qViDg==
   dependencies:
     axios "^0.27.2"
-    complex-utils "^1.0.4"
-
-complex-utils@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/complex-utils/-/complex-utils-1.0.4.tgz#b678bf87247759b06a3b0f4ff3ff7cae220458e4"
-  integrity sha512-WSjVD9TPjwVLFcSlFAhHzuJ8dP/SZLEHcT/VcyECkVWZahucNDwctgKFF4Dkaozaltivzvf/uUFavgBKwiveKw==
+    complex-utils "^1.0.5"
 
 complex-utils@^1.0.5:
   version "1.0.5"

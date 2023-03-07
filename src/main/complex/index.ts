@@ -1,10 +1,9 @@
 import { App } from 'vue'
-import { componentInit } from './component'
+// import { componentInit } from './component'
 import { funcInit } from './func'
-import { requireInit } from './require'
+import require from './require'
 
 export const init = function(app: App) {
-  requireInit()
-  componentInit(app)
+  // componentInit(app)
   return funcInit(app)
 }
