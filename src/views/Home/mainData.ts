@@ -1,13 +1,11 @@
-import BaseData from "@/modules/complex-data/src/data/BaseData"
-
-
+import { ComplexList } from "@/modules/complex-data"
 
 interface dataType {
   id: number,
   name: string
 }
 
-const mainData = new BaseData({
+const mainData = new ComplexList({
   name: '测试',
   prop: 'test',
   extra: {
@@ -20,29 +18,61 @@ const mainData = new BaseData({
         {
           prop: '$index',
           name: 'No',
+          originFrom: 'local'
         },
         {
           prop: 'id',
           name: 'ID',
+          originFrom: 'list',
+          format(data, payload) {
+            return 'id' + data
+          }
         },
         {
           prop: 'name',
           name: '名称',
+          originFrom: 'list'
+        },
+        {
+          prop: 'object',
+          name: '对象',
+          originFrom: 'list',
+          format(data: any) {
+            data.e = 'e'
+            data.name += 'e'
+            return data
+          },
+          dictionary: {
+            list: [
+              {
+                prop: 'name',
+                name: '名称',
+                originFrom: 'list',
+                format(data) {
+                  return 'name' + data
+                }
+              }
+            ]
+          }
         }
       ]
     }
   },
-  $getData(this: BaseData) {
+  $getData(this: ComplexList) {
     return new Promise((resolve) => {
-      const list: dataType[] = []
+      const olist: dataType[] = []
       for (let i = 0; i < 10; i++) {
         const item = {
           id: i,
-          name: 'name' + 'name' + 'name' + 'name' + i
+          name: 'name' + 'name' + 'name' + 'name' + i,
+          object: {
+            name: i
+          },
+          extra: i
         }
-        list.push(item)
+        olist.push(item)
       }
-      this.$module.dictionary!.formatListData(list)
+      this.$formatList(olist, 150)
       resolve({ status: 'success' })
     })
   },
