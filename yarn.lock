@@ -2569,10 +2569,10 @@ complex-data@3.0.0-beta.15:
   dependencies:
     complex-func "3.0.0-beta.8"
 
-complex-data@^3.1.0-beta.12:
-  version "3.1.0-beta.12"
-  resolved "https://registry.npmjs.org/complex-data/-/complex-data-3.1.0-beta.12.tgz#76618914c2b1836609466b2b723f6763d08cd2a7"
-  integrity sha512-0Y1BjhGAoVSL8Qw1H75r5hNhgNz8L3TSU7hoO9alTU3Kih3ZXnZzABakgikYZZW6qL18ZjPAqT0cwdRYWnGsjg==
+complex-data@^3.1.0-beta.13:
+  version "3.1.0-beta.13"
+  resolved "https://registry.npmjs.org/complex-data/-/complex-data-3.1.0-beta.13.tgz#cec8ce62388e8810e8f76d23f74ecaa60ac9f27b"
+  integrity sha512-BHEnVMB3q7zfgxymDyfWYgvam3/fX7sc+aYsNw8wMaOYyRCLX8PZ0QeNgkq8FwIITCleZ/s6v5RAeBGRblFtFQ==
   dependencies:
     complex-utils "^1.0.5"
 
