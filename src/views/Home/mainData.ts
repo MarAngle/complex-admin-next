@@ -1,4 +1,4 @@
-import { ComplexList } from "@/modules/complex-data"
+import { ComplexList } from "complex-data"
 
 interface dataType {
   id: number,
@@ -26,12 +26,18 @@ const mainData = new ComplexList({
           originFrom: 'list',
           format(data, payload) {
             return 'id' + data
+          },
+          mod: {
+            list: {}
           }
         },
         {
           prop: 'name',
           name: '名称',
-          originFrom: 'list'
+          originFrom: 'list',
+          mod: {
+            list: {}
+          }
         },
         {
           prop: 'object',
@@ -53,6 +59,9 @@ const mainData = new ComplexList({
                 }
               }
             ]
+          },
+          mod: {
+            list: {}
           }
         }
       ]

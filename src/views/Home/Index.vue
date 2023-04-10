@@ -31,8 +31,8 @@ export default defineComponent({
   data() {
     return {
       mainData: mainData,
-      pageList: mainData.$getDictionaryPageList("list").data
-    };
+      pageList: mainData.$getDictionaryPageList('list')
+    }
   },
   methods: {
     onBuild() {
