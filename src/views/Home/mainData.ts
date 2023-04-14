@@ -36,7 +36,16 @@ const mainData = new ComplexList({
           name: '名称',
           originFrom: 'list',
           mod: {
-            list: {}
+            list: {},
+            edit: {
+              type: 'input'
+            },
+            build: {
+              $target: 'edit'
+            },
+            change: {
+              $target: 'edit'
+            }
           }
         },
         {
