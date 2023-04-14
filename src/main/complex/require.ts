@@ -1,5 +1,5 @@
 import { responseType } from 'complex-require/src/RequireRule'
-import { notice } from 'complex-func'
+import { notice } from 'complex-plugin'
 import { Require } from 'complex-require'
 
 let loginAlert = false

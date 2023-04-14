@@ -1,9 +1,9 @@
 import { App } from 'vue'
 import { Modal, ModalProps, notification } from 'ant-design-vue'
 import { NotificationArgsProps } from 'ant-design-vue/lib/notification'
-import { install } from 'complex-func'
+import { install } from 'complex-plugin'
 import { setLocalProp } from 'complex-utils'
-import { noticeMsgType } from 'complex-func/src/notice'
+import { noticeMsgType } from 'complex-plugin/src/notice'
 
 export const funcInit = function(app: App) {
   install({

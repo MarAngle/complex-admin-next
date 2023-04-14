@@ -1,4 +1,4 @@
-import { ComplexList } from "complex-data"
+import { ComplexList } from "complex-data-next"
 
 interface dataType {
   id: number,
