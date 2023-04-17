@@ -26,21 +26,33 @@
       :onEvent="onEditEvent"
       ref="edit-modal"
     >
-      <ComplexEditForm ref="edit-view" :dictionary="mainData.$module.dictionary"></ComplexEditForm>
+      <ComplexEditForm ref="edit-view" :dictionary="mainDictionary"></ComplexEditForm>
     </ComplexAutoModal>
   </div>
 </template>
 
 <script lang="ts" >
+import { ComplexTableView, ComplexAutoModal, ComplexEditForm } from "@/modules/complex-component-next/antd";
 import { defineComponent } from "vue";
 import mainData from "./mainData";
+import { DefaultList } from "complex-data-next";
 
 export default defineComponent({
   name: "HomeIndex",
+  components: {
+    ComplexTableView,
+    ComplexAutoModal,
+    ComplexEditForm
+  },
   data() {
     return {
       mainData: mainData,
-      pageList: mainData.$getDictionaryPageList('list')
+      pageList: mainData.$getDictionaryPageList('list') as DefaultList[]
+    }
+  },
+  computed: {
+    mainDictionary() {
+      return mainData.$module.dictionary!
     }
   },
   methods: {

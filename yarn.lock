@@ -2570,18 +2570,18 @@ commondir@^1.0.1:
   resolved "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
   integrity sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==
 
-complex-component-next@^3.1.0-beta.2:
-  version "3.1.0-beta.2"
-  resolved "https://registry.npmjs.org/complex-component-next/-/complex-component-next-3.1.0-beta.2.tgz#c90be11ecd7e751e386f3dd8a19891f2041b7fcb"
-  integrity sha512-a1aDVThBFgOU1LwvmqL34/nG9DNB9AiIX4EpKH90Ukv+Ot5rBse4hM0VEb02VVitqnZ1sPYvkUTdjfiUpwWyXQ==
+complex-component-next@^3.1.0-beta.3:
+  version "3.1.0-beta.3"
+  resolved "https://registry.npmjs.org/complex-component-next/-/complex-component-next-3.1.0-beta.3.tgz#0e14f888328f4b8132eaf0d8405a680d39c93f8e"
+  integrity sha512-SIiVT/woGsSQje6Pja+SuIlZosbWuzk7m1XL2iTGXXBqeuuM1kfYQqhHVwJjevmnSkR7Qhr3ReD/D7tRwq0XpQ==
   dependencies:
     ant-design-vue "^3.2.14"
-    complex-data-next "^3.1.0"
+    complex-data-next "^3.1.1"
 
-complex-data-next@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/complex-data-next/-/complex-data-next-3.1.0.tgz#197bdf44a442a636b03e097007ecc895a26e9c62"
-  integrity sha512-ztBV1tK+jA6+F2URlwaV66JAynNqXg2QJb5iYgO7yg6k+89VxjpH4hTrhh3KLCDge9VHTnHbj1UChroAowFrnQ==
+complex-data-next@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npmjs.org/complex-data-next/-/complex-data-next-3.1.1.tgz#07f0a60e07d41860d58c999f23560af78a2b00ee"
+  integrity sha512-1gKfJ2d0beCOSG51fQElmh07asflUQGABK9I/ZMlKAp4wy7e2pyXPEvwEpVx2zzNkBQYGEi/Kq4K3HgMGY9GVA==
   dependencies:
     complex-utils "^1.0.5"
 
