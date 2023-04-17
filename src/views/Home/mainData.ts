@@ -1,8 +1,10 @@
+import { Button } from "ant-design-vue"
 import { ComplexList } from "complex-data-next"
+import { h } from "vue"
 
 interface dataType {
   id: number,
-  name: string
+  input: string
 }
 
 const mainData = new ComplexList({
@@ -32,13 +34,91 @@ const mainData = new ComplexList({
           }
         },
         {
-          prop: 'name',
-          name: '名称',
+          prop: 'input',
+          name: '输入框',
           originFrom: 'list',
           mod: {
             list: {},
             edit: {
-              type: 'input'
+              type: 'input',
+              option: {
+                maxLength: 40
+              }
+            },
+            build: {
+              $target: 'edit'
+            },
+            change: {
+              $target: 'edit'
+            }
+          }
+        },
+        {
+          prop: 'inputNumber',
+          name: '数字',
+          originFrom: 'list',
+          mod: {
+            list: {},
+            edit: {
+              type: 'inputNumber',
+              option: {
+                max: 100,
+                min: 0,
+                step: 2,
+                precision: 0
+              }
+            },
+            build: {
+              $target: 'edit'
+            },
+            change: {
+              $target: 'edit'
+            }
+          }
+        },
+        {
+          prop: 'select',
+          name: '选项',
+          originFrom: 'list',
+          mod: {
+            list: {},
+            edit: {
+              type: 'select',
+              required: true,
+              placeholder: '这里是自定义的文字',
+              tip: '这是自定义的提示',
+              option: {
+                list: [
+                  {
+                    value: 1,
+                    label: '111'
+                  },
+                  {
+                    value: 2,
+                    label: '222'
+                  },
+                ]
+              }
+            },
+            build: {
+              $target: 'edit'
+            },
+            change: {
+              $target: 'edit'
+            }
+          }
+        },
+        {
+          prop: 'button',
+          name: '按钮',
+          originFrom: 'local',
+          mod: {
+            list: {},
+            edit: {
+              type: 'button',
+              option: {
+                name: 'xxx'
+              }
             },
             build: {
               $target: 'edit'
@@ -72,6 +152,18 @@ const mainData = new ComplexList({
           mod: {
             list: {}
           }
+        },
+        {
+          prop: 'menu',
+          name: '操作',
+          originFrom: 'local',
+          mod: {
+            list: {
+              render() {
+                return h(Button, {}, '操作')
+              }
+            }
+          }
         }
       ]
     }
@@ -82,7 +174,8 @@ const mainData = new ComplexList({
       for (let i = 0; i < 10; i++) {
         const item = {
           id: i,
-          name: 'name' + 'name' + 'name' + 'name' + i,
+          input: 'name' + i,
+          select: 1,
           object: {
             name: i
           },
