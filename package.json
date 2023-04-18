@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "ant-design-vue": "^3.2.11",
-    "complex-data-next": "^3.1.1",
+    "complex-data-next": "^3.1.2",
     "complex-component-next": "^3.1.0",
-    "complex-plugin": "^3.1.0",
-    "complex-utils": "^1.0.5",
-    "complex-require": "^3.1.0",
+    "complex-plugin": "^3.1.1",
+    "complex-utils": "^1.0.6",
+    "complex-require": "^3.1.2",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
