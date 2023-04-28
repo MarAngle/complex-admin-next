@@ -2570,10 +2570,10 @@ commondir@^1.0.1:
   resolved "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
   integrity sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==
 
-complex-component-next@^3.1.0-beta.3:
-  version "3.1.0-beta.3"
-  resolved "https://registry.npmjs.org/complex-component-next/-/complex-component-next-3.1.0-beta.3.tgz#0e14f888328f4b8132eaf0d8405a680d39c93f8e"
-  integrity sha512-SIiVT/woGsSQje6Pja+SuIlZosbWuzk7m1XL2iTGXXBqeuuM1kfYQqhHVwJjevmnSkR7Qhr3ReD/D7tRwq0XpQ==
+complex-component-next@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/complex-component-next/-/complex-component-next-3.1.0.tgz#224612c3ec02573d3c72d084507d95e3e372e6f1"
+  integrity sha512-MpZbjNRhLvZfDx6XxeeJIVSvZuJ5qQJd03U33QPZ7Nc1vm+Ud89/6cjnIITuAdPadT+aBr6/V84hPv7Hsfh+Yw==
   dependencies:
     ant-design-vue "^3.2.14"
     complex-data-next "^3.1.1"
@@ -2585,20 +2585,32 @@ complex-data-next@^3.1.1:
   dependencies:
     complex-utils "^1.0.5"
 
-complex-plugin@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/complex-plugin/-/complex-plugin-3.1.0.tgz#de48829a14ff200a9916403c15f719bc42bf19e9"
-  integrity sha512-ITucSvX+IWzzv+i6iD6ThoZQzfYPNljDJ8AjxuPC0B+fVywPbaJUu/rA+us8SAnkwXlfEWpX29KWbp+VhBMN7Q==
+complex-data-next@^3.1.12:
+  version "3.1.12"
+  resolved "https://registry.npmjs.org/complex-data-next/-/complex-data-next-3.1.12.tgz#97bc3c874684d187e05dbbb86ba8c71ba027abe0"
+  integrity sha512-8tD7CtXFqHkCvF63gr921lhmbNbFg6pte+3WV87TuQr29y+NvA9ScFROCk0uc7NzF66l0hIYbUBd7vPVV+vJXA==
   dependencies:
-    complex-utils "^1.0.5"
+    complex-utils "^1.0.10"
 
-complex-require@^3.1.0:
-  version "3.1.1"
-  resolved "https://registry.npmjs.org/complex-require/-/complex-require-3.1.1.tgz#b65fefd66e2daf2daacdeff5cfdb6b02c26214eb"
-  integrity sha512-vXXvv8RWrGhNyCrSGGT8wG03AzqhyUkTDeG64zOZRy/kuOG/sk59IKvm0Wm4i3ofJXnKKmEs5ZNqQzEwLFw6Zw==
+complex-plugin@^3.1.6:
+  version "3.1.6"
+  resolved "https://registry.npmjs.org/complex-plugin/-/complex-plugin-3.1.6.tgz#1ddeb4b1b634212fedb1fd8b88107ce8232d3d44"
+  integrity sha512-CkQt7ACef6eccfSzcJn9LKXmfD1iA6bJS3P9yFr1tRxpQBbax9ac4yWiaGw6W41tTzbNQb9wUFkV8aggUwWxhg==
+  dependencies:
+    complex-utils "^1.0.10"
+
+complex-require@^3.1.8:
+  version "3.1.8"
+  resolved "https://registry.npmjs.org/complex-require/-/complex-require-3.1.8.tgz#7877a772b8ede5ab4bb6318dee1908256c232f18"
+  integrity sha512-VN4RBRAMXeF5fIi8jGnPSffbvHhhSaQR1rXRXVhEXxn0nE8/Yyk9qs++gYYySh2spgh6R1kiH4JoeMOsx1fqMw==
   dependencies:
     axios "^1.3.4"
-    complex-utils "^1.0.5"
+    complex-utils "^1.0.10"
+
+complex-utils@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.npmjs.org/complex-utils/-/complex-utils-1.0.10.tgz#34beb63f2b626f4da1382ea8a3e99327ecacffc2"
+  integrity sha512-BT3zskrRpJqJoNt2yVY7uNmgBc4le5lFCcuklQl2s2pi0ipq4PrjxjqGJO6BkhwSKdzjBKJDw0VEtP2jsCKIJw==
 
 complex-utils@^1.0.5:
   version "1.0.5"
